@@ -6,10 +6,9 @@
     "passthrough": false,
     "gtk-layer-shell": true,
     "height": 35,
-    "modules-left": ["custom/launch_wofi","hyprland/workspaces","cpu","memory","disk","hyprland/window"],
-    //"modules-center": [],
-    "modules-right": ["custom/updates","temperature","custom/power_profile","battery","backlight","pulseaudio","pulseaudio#microphone","tray","custom/weather","custom/light_dark","clock","custom/power_btn"],
-    
+    "modules-left": ["custom/launch_wofi","hyprland/workspaces","hyprland/window"],
+    "modules-center": ["custom/updates"],
+    "modules-right": ["cpu","memory","disk","temperature","custom/power_profile","battery","backlight","pulseaudio","pulseaudio#microphone","tray","custom/weather","custom/light_dark","clock","custom/power_btn"],
     "hyprland/window": {
         "format": "{}"
     },
@@ -26,11 +25,11 @@
         "tooltip": false
     }, */
 
-    "custom/light_dark": {
+    /* "custom/light_dark": {
         "format": "🌞🌛",
         "on-click": "~/.config/waybar/scripts/baraction light",
         "tooltip": false
-    },
+    }, */
 
     "custom/power_btn": {
         "format": "",
@@ -89,14 +88,14 @@
         }
     },
     
-    "custom/power_profile": {
+    /* "custom/power_profile": {
         //shows the current power profile and switches to next on click
         "exec": "asusctl profile -p | sed s:'Active profile is'::",
         "interval": 30,
         "format": "󰈐{}", 
         "on-click": "asusctl profile -n; pkill -SIGRTMIN+8 waybar",
         "signal": 8
-    },
+    }, */
 
    /* "custom/weather": {
         //shows the current weather and forecast
@@ -113,7 +112,7 @@
     },
 
     "clock": {
-        "format": "{:%I:%M %p %a %b %d}",
+        "format": "{:%I:%M %p | %b %a %d, %Y}",
         "tooltip": true,
         "tooltip-format": "{: %A, %B %e %Y}",
         "on-click": "kitty 'calcurse'"
@@ -136,9 +135,9 @@
         },
         "format": "{icon} {capacity}%",
         "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format-plugged": " Full",
         "format-alt": "{time} {icon}",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        "format-icons": ["󰂎 Bye", "󰁺 Low", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹 Full"]
     },
 
     "pulseaudio": {
