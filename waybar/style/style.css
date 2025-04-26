@@ -134,3 +134,11 @@ tooltip label{
     color: #1d7715;
     border-left: 0px;
 }
+
+#clock {
+  border-radius: 10px 0px 0px 0px;
+}
+
+#custom-updates {
+  border-radius: 10px;
+}
